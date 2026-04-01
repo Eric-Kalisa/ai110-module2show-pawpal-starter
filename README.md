@@ -35,6 +35,22 @@ Recent scheduler upgrades make PawPal+ more practical for real daily planning:
 
 ## Getting started
 
+## Testing PawPal+
+
+Run the full test suite with:
+
+```bash
+python -m pytest
+```
+
+Current tests focus on the most important scheduler behaviors, including:
+
+- Chronological task sorting and filtering behavior.
+- Recurring task handling (Daily and Weekly follow-up task creation after completion).
+- Conflict detection for duplicate times and overlapping task durations.
+- Conflict warning messages and priority-based recommendation logic.
+- Basic task and pet operations such as adding tasks and marking completion.
+
 ### Setup
 
 ```bash
@@ -52,3 +68,7 @@ pip install -r requirements.txt
 5. Add tests to verify key behaviors.
 6. Connect your logic to the Streamlit UI in `app.py`.
 7. Refine UML so it matches what you actually built.
+
+### Demo
+
+<a href="/course_images/ai110/StreamLit%20Demo.png" target="_blank"><img src='/course_images/ai110/StreamLit%20Demo.png' title='PawPal App' width='' alt='PawPal App' class='center-block' /></a>

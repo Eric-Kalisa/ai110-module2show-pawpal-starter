@@ -45,7 +45,6 @@ for their pet(s) based on constraints like time, priority, and preferences.
 You will design and implement the scheduling logic and connect it to this Streamlit UI.
 """
     )
-
 with st.expander("What you need to build", expanded=True):
     st.markdown(
         """

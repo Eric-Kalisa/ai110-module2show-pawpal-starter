@@ -81,10 +81,30 @@ I reread the prompt to have a better understanding of how my program should work
 - What behaviors did you test?
 - Why were these tests important?
 
+I tested the core behaviors that make the scheduler useful and reliable:
+- marking a task complete updates its status correctly;
+- adding tasks to a pet updates task count;
+- tasks are sorted in chronological order;
+- filtering works by pet and by completion status;
+- recurrence behavior works (Daily and Weekly tasks spawn the next occurrence after completion; Monthly does not auto-spawn);
+- conflict detection works for same start times and overlapping durations;
+- conflict warnings include a recommendation based on task priority.
+
+These tests were important because they validate the exact features users depend on in day-to-day planning: seeing tasks in the right order, avoiding schedule collisions, and preserving continuity for recurring care.
+
 **b. Confidence**
 
 - How confident are you that your scheduler works correctly?
 - What edge cases would you test next if you had more time?
+
+I am moderately high in confidence because the main scheduling paths are covered by passing unit tests, including sorting, filtering, recurrence, and conflict logic. I am confident in normal usage scenarios and in the overlap/conflict protections.
+
+If I had more time, I would test more edge cases:
+- time parsing edge cases (invalid formats, noon/midnight, and mixed 12-hour/24-hour inputs);
+- recurrence edge dates (end-of-month behavior such as tasks starting on the 29th-31st);
+- duplicate descriptions for the same pet (to ensure mark_task_complete targets the intended task);
+- multi-pet heavy schedules with many overlapping tasks;
+- timezone/date-boundary scenarios if the app is later expanded beyond local single-day usage.
 
 ---
 
@@ -94,10 +114,16 @@ I reread the prompt to have a better understanding of how my program should work
 
 - What part of this project are you most satisfied with?
 
+I am most satisfied with the scheduler evolution from a simple task list into a more realistic planning system. In particular, adding overlap-based conflict detection and priority-based recommendations made the app feel more practical, and the recurring-task continuation logic improved usability.
+
 **b. What you would improve**
 
 - If you had another iteration, what would you improve or redesign?
 
+In another iteration, I would redesign task identification so each task has a unique ID rather than relying mainly on description text. I would also improve UI guidance around conflicts (for example, suggested alternatives and quick reschedule actions), and I would add persistence so data survives app restarts.
+
 **c. Key takeaway**
 
 - What is one important thing you learned about designing systems or working with AI on this project?
+
+One key takeaway is that AI is most effective when I use it as a collaborator instead of an answer generator. The best results came from giving specific context, validating every suggestion with tests, and iterating in small steps so design decisions stayed aligned with actual system behavior.
