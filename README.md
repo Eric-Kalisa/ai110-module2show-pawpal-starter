@@ -22,6 +22,17 @@ Your final app should:
 - Display the plan clearly (and ideally explain the reasoning)
 - Include tests for the most important scheduling behaviors
 
+## Smarter Scheduling
+
+Recent scheduler upgrades make PawPal+ more practical for real daily planning:
+
+- Time-aware organization: tasks can be sorted chronologically and filtered by pet or completion status.
+- Recurring task continuity: completing a Daily or Weekly task automatically creates the next occurrence.
+- Duration overlap detection: conflicts are checked by time windows, not only matching start times.
+- Non-blocking conflict warnings: when tasks overlap, the system returns a warning message instead of crashing.
+- Priority-based recommendations: conflict warnings include which activity should be completed first using a simple High > Medium > Low hierarchy.
+- Test-backed behavior: unit tests cover sorting, filtering, recurrence, overlap handling, and recommendation logic.
+
 ## Getting started
 
 ### Setup

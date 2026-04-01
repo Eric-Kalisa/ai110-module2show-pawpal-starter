@@ -41,12 +41,19 @@ def __post_init__(self):
 
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
+Considerations are: chronological ordering of tasks, recurring schedules, completion state, overlap conflicts based on task duration.
+
+I prioritized constraints that reduce missed care and confusion for the owner, especially “what is due next” and “can this task fit without overlap? I am considering suggesting to the user what activity to complete based on priority ordering in case of conflict
 
 **b. Tradeoffs**
 
-- Describe one tradeoff your scheduler makes.
+- Describe one tradeoff your scheduler makes. 
+
+A key tradeoff is using a rule-based scheduler instead of a complex optimization system. This means the app is easier to understand and debug, but it may not produce a globally optimal plan.
+
 - Why is that tradeoff reasonable for this scenario?
 
+n. For this project, that tradeoff is reasonable because clarity matter more than advanced optimization as this is a learning project vs an optimal market trady program
 ---
 
 ## 3. AI Collaboration
@@ -55,13 +62,16 @@ def __post_init__(self):
 
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
 - What kinds of prompts or questions were most helpful?
+I used AI for design brainstorming, implementation support, and code review. It was most useful when I asked for concrete improvements tied to my actual classes, like sorting tasks by time, filtering by status, and handling recurring task generation after completion.
 
 **b. Judgment and verification**
 
 - Describe one moment where you did not accept an AI suggestion as-is.
-Enumeration of tasks; I initially thought this should be a list that should be appended by user input but as I read the prompt it was still unclear as to whether I should 
+
+Enumeration of tasks; I initially thought this should be a list that should be appended by user input but as I read the prompt it was still unclear as to whether I should allow a user to input a list of tasks or have predefined tasks
 - How did you evaluate or verify what the AI suggested?
 
+I reread the prompt to have a better understanding of how my program should work
 ---
 
 ## 4. Testing and Verification
